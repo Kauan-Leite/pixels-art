@@ -82,9 +82,26 @@ let count2 = 1;
 for(let index = 1; index <= count1; index += 1){
     let pixelN = document.getElementsByClassName(index)[0]
     function test(){
-        pixelN.classList.add("paint");
+        // pixelN.classList.add("paint");
         pixelN.style.backgroundColor = colorSelect;
     }
 
     pixelN.addEventListener("click", test);
+}
+
+
+
+
+let botao = document.getElementById("clear-board");
+
+for(let index = 1; index <= count1; index += 1){
+    function vasco(){
+    let allPixels = document.getElementsByClassName(index)[0]
+
+        // allPixels.classList.remove("paint");
+        allPixels.style.backgroundColor = "white";
+    }
+
+    botao.addEventListener('click', vasco)
+
 }
