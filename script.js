@@ -7,11 +7,16 @@ let colorGreen = document.querySelector(".green");
 let colorYellow = document.querySelector(".yellow");
 
 
+let count1 = 0;
 
-for(let index1 = 0; index1 < 5; index1 += 1){
+for(let index1 = 1; index1 <= 5; index1 += 1){
     for(let index2 = 1; index2 <= 5; index2 +=1){
+        count1 += 1;
         let pixels = document.createElement("div");
         pixels.classList.add("pixel");
+        pixels.classList.add(count1);
+        // pixels.classList.add("linha" + index1);
+        // pixels.classList.add("coluna" + index2);
         // pixels.innerHTML= index1;
 
         pixelBoard.appendChild(pixels);
@@ -21,11 +26,16 @@ for(let index1 = 0; index1 < 5; index1 += 1){
 }
 
 
+
+let colorSelect = "black";
+
 function changeBlack(){
     colorBlack.classList.add("selected");
     colorRed.classList.remove("selected");
     colorGreen.classList.remove("selected");
     colorYellow.classList.remove("selected");
+    colorSelect = "black";
+
 }
 
 colorBlack.addEventListener("click", changeBlack);
@@ -35,6 +45,8 @@ function changeRed(){
     colorBlack.classList.remove("selected");
     colorGreen.classList.remove("selected");
     colorYellow.classList.remove("selected");
+    colorSelect = "red";
+
 }
 
 colorRed.addEventListener("click", changeRed);
@@ -45,6 +57,8 @@ function changeGreen(){
     colorRed.classList.remove("selected");
     colorBlack.classList.remove("selected");
     colorYellow.classList.remove("selected");
+    colorSelect = "green";
+
 }
 
 colorGreen.addEventListener("click", changeGreen);
@@ -54,10 +68,23 @@ function changeYellow(){
     colorGreen.classList.remove("selected");
     colorRed.classList.remove("selected");
     colorBlack.classList.remove("selected");
+    colorSelect = "yellow";
+
 }
 
 colorYellow.addEventListener("click", changeYellow);
 
+let count2 = 1;
 
 
 
+
+for(let index = 1; index <= count1; index += 1){
+    let pixelN = document.getElementsByClassName(index)[0]
+    function test(){
+        pixelN.classList.add("paint");
+        pixelN.style.backgroundColor = colorSelect;
+    }
+
+    pixelN.addEventListener("click", test);
+}
