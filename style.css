@@ -1,10 +1,23 @@
 *{
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: darkred;
+    color: white;
+}
+
+h1{
+    -webkit-text-stroke: 1px black;
 }
 
 #color-palette{
     display: inline-block;
+    background-color: white;
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 8px;
 }
 
 .color{
@@ -12,14 +25,25 @@
     width: 60px;
     height: 60px;
     border: 1px solid black;
+    border-radius: 10px;
 }
 
 .black{
     background-color: black;
 }
 
+#board-size{
+    width: 180px;
+}
+
+#clear-board{
+    width: 100px;
+}
+
 #pixel-board{
     display: inline-block;
+    background-color: black;
+    padding: 3px;
 }
 
 .pixel{
