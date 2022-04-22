@@ -18,18 +18,6 @@
     background-color: black;
 }
 
-.one{
-    background-color: red;
-}
-
-.two{
-    background-color: green;
-}
-
-.three{
-    background-color: yellow;
-}
-
 #pixel-board{
     display: inline-block;
 }
